@@ -1,0 +1,140 @@
+// import 'package:business/models/1Company_Model/company_model.dart';
+// import 'package:business/presentation/widgets/2Process_Widgets/1CustomBottomSheet.dart';
+// import 'package:business/presentation/widgets/2Process_Widgets/2Process_Body.dart';
+// import 'package:flutter/material.dart';
+
+// // ignore: must_be_immutable
+// class Process_View extends StatelessWidget {
+//   Process_View({super.key, required this.company_model});
+
+//   final Company_Model company_model;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(company_model.CompanyName.toString()),
+//       ),
+//       body: Process_Body(company_model: company_model),
+//       floatingActionButton: FloatingActionButton(
+//         backgroundColor: Colors.red,
+//         onPressed: () {
+//           CustomProcessBottomSheet(
+//               context: context, company_model: company_model);
+//         },
+//         child: Icon(
+//           size: 30,
+//           Icons.add,
+//           color: Colors.black,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import 'package:business/business_logic/Process_Cubit/Get_Process_Cubit.dart';
+// import 'package:business/business_logic/Process_Cubit/Process_State.dart';
+// import 'package:business/models/1Company_Model/company_model.dart';
+// import 'package:business/presentation/widgets/2Process_Widgets/1CustomBottomSheet.dart';
+// import 'package:business/presentation/widgets/2Process_Widgets/2Process_Body.dart';
+// import 'package:business/shared/styles/constants.dart';
+// import 'package:flutter/material.dart';
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+
+// // ignore: must_be_immutable
+// class Process_View extends StatelessWidget {
+//   Process_View({super.key, required this.company_model});
+
+//   final Company_Model company_model;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return BlocProvider(
+//       create: (context) => Get_Process_Cubit()
+//         ..fetchAllProcess(CompanyID: company_model.CompanyID)
+//         ..fetchProcessBySaleOrPay(
+//           CompanyID: company_model.CompanyID,
+//         ),
+//       child: BlocConsumer<Get_Process_Cubit, ProcessStates>(
+//         listener: (context, state) {},
+//         builder: (context, state) {
+//           Get_Process_Cubit cubit = Get_Process_Cubit.get(context);
+
+//           return Scaffold(
+//             // backgroundColor: secondaryColor,
+
+//             // appBar: AppBar(
+//             //   title: Text(company_model.CompanyName.toString()),
+//             // ),
+//             body: Process_Body(company_model: company_model),
+//             // body: cubit.screens[cubit.currentIndex],
+//             // body: SingleChildScrollView(
+//             //   child: Container(
+//             //     color: Colors.yellow,
+//             //     height: 200,
+//             //     child: ListView.builder(
+//             //       itemCount: cubit.process.length,
+//             //       itemBuilder: (context, index) => Text("dad"),
+//             //     ),
+//             //   ),
+//             // ),
+
+//             floatingActionButton: FloatingActionButton(
+//               backgroundColor: Colors.blue,
+//               onPressed: () {
+//                 CustomProcessBottomSheet(
+//                     context: context, company_model: company_model);
+//               },
+//               child: Icon(
+//                 size: 30,
+//                 Icons.add,
+//                 color: Color(0xFFFFC727),
+//               ),
+//             ),
+//             bottomNavigationBar: CurvedNavigationBar(
+//               color: secondaryColor,
+//               buttonBackgroundColor: Colors.blue,
+//               backgroundColor: Colors.white, // Customize the background color
+//               items: [
+//                 Icon(
+//                   Icons.list,
+//                   size: 30,
+//                   color: Color(0xFFFFC727),
+//                 ),
+//                 Icon(
+//                   Icons.search,
+//                   size: 30,
+//                   color: Color(0xFFFFC727),
+//                 ),
+//                 Icon(
+//                   Icons.favorite,
+//                   size: 30,
+//                   color: Color(0xFFFFC727),
+//                 ),
+//               ],
+//               index: cubit.currentIndex,
+//               onTap: (index) {
+//                 cubit.changeIndex(index);
+//               },
+//             ),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
